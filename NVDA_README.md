@@ -1,45 +1,59 @@
-# TickBot: NVDA Intraday Buy/Sell Signal Predictor
+# 📊 My First AI Trading Simulation - "TickBot" 🚀
 
-## 📌 Objective
+## What I Built
+I just completed my first end-to-end AI trading simulation project! This was my very first attempt at building a predictive trading system using PyTorch and real stock data.
 
-TickBot is a real-time trading simulation tool designed to analyze 1-minute intraday NVDA stock data. It leverages a lightweight neural network to learn short-term market trends and issue Buy/Sell predictions at precise intervals.
+## The Journey
+As someone new to both machine learning and trading, I wanted to create something that would help me understand how AI might be used in financial markets. This project was my baby step into the world of algorithmic trading.
+
+## What It Does
+I built **TickBot** – a simple but functional trading simulation that:
+
+- Downloads real 1-minute NVDA stock data from Yahoo Finance
+- Focuses on a specific trading window (9:30am–10:30am Eastern time)
+- Uses a neural network to predict whether the next minute will go up (Buy) or down (Sell)
+- Makes predictions every minute using a rolling 4-minute historical window
+
+## The Tech Stack
+
+- **PyTorch** – for building and training the neural network
+- **Yahoo Finance API** – to pull real stock data
+- **Matplotlib** – to visualize predictions on price charts
+- **Python** – my first language for machine learning projects
+
+## How It Works (in Simple Terms)
+
+1. I collect 4 consecutive minutes of stock price + volume data
+2. The neural network learns whether the next minute’s price will go up or down
+3. If it predicts “go up,” I show a green triangle (Buy)
+4. If it predicts “go down,” I show a red triangle (Sell)
+
+## The Result
+
+The model scanned NVDA's 1-minute price chart for a 1-hour period and produced buy/sell predictions.  
+📈 In one test, **TickBot made a simulated $2.20 gain per share** by following its signals.
+
+
+## What I Learned
+
+- How to structure ML projects from data collection to visualization
+- Time zone handling and filtering real-world market data
+- How neural networks can be trained to make predictions on time-series data
+- The challenge of working with real, noisy financial data
+
+## What’s Next?
+
+- Add more input features like technical indicators and moving averages
+- Expand testing to more stocks beyond NVDA
+- Implement real trading logic with position sizing and stop-loss
+- Add backtesting and performance evaluation
 
 ---
 
-## 🕒 Time Window
-
-- **Market Hours Analyzed:** 9:30 AM – 10:30 AM (Eastern Time)
-- **Data Interval:** 1-minute candles
-- **Chart X-Axis:** Displays human-readable timestamps
-- **Y-Axis:** NVDA Close Price
+> This project represents my **first real step into the world of AI-powered trading**, and I'm excited to keep building on it!
 
 ---
 
-## 🧠 Prediction Strategy
+#### Tags
 
-### Rolling 4-Minute Learning Window
-- At every **5th minute**, the model:
-    - Looks back at the **previous 4 minutes** of price + volume data
-    - Predicts whether to **Buy or Sell** at that 5th minute
-
-### Marker Logic
-- A **Buy Signal (▲ green)** is shown at time `t` if the model predicts a price increase based on `t-4` to `t-1` data
-- A **Sell Signal (▼ red)** is shown at time `t` if the model predicts a price drop based on `t-4` to `t-1` data
-
----
-
-## ✅ Prediction Display Rules
-
-- **Predictions are only shown at every 5th minute** (e.g., 9:34, 9:39, etc.)
-- No signal is shown at other times
-- Each marker reflects the model’s decision based on learned short-term patterns
-
----
-
-## 💡 Future Enhancements
-
-- Track performance of predictions
-- Add confidence thresholds to reduce false signals
-- Extend to other tickers or longer trading sessions
-
-# Monday 10:45 AM - Initializing the neural learning test branch
+`#python` `#pytorch` `#machinelearning` `#trading` `#ai` `#dataanalysis` `#quantitativefinance` `#beginnerproject`
